@@ -7,20 +7,20 @@
 		<link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
 		<link rel="shortcut icon" href="/static/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="Open WebUI" />
+		<meta name="apple-mobile-web-app-title" content="SneakyHub AI" />
 
 		<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
 		/>
-		<meta name="theme-color" content="#171717" />
+		<meta name="theme-color" content="#ff6b35" />
 		<meta name="robots" content="noindex,nofollow" />
-		<meta name="description" content="Open WebUI" />
+		<meta name="description" content="SneakyHub AI - Advanced AI assistant for developers. Expert in coding, debugging, config creation, and development workflows. Built for developers, by developers." />
 		<link
 			rel="search"
 			type="application/opensearchdescription+xml"
-			title="Open WebUI"
+			title="SneakyHub AI"
 			href="/opensearch.xml"
 		/>
 		<script src="/static/loader.js" defer></script>
@@ -44,7 +44,7 @@
 
 				if (localStorage.theme === 'system') {
 					document.documentElement.classList.add(prefersDarkTheme ? 'dark' : 'light');
-					metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#ffffff');
+					metaThemeColorTag.setAttribute('content', '#ff6b35');
 				} else if (localStorage.theme === 'oled-dark') {
 					document.documentElement.style.setProperty('--color-gray-800', '#101010');
 					document.documentElement.style.setProperty('--color-gray-850', '#050505');
@@ -54,14 +54,14 @@
 					metaThemeColorTag.setAttribute('content', '#000000');
 				} else if (localStorage.theme === 'light') {
 					document.documentElement.classList.add('light');
-					metaThemeColorTag.setAttribute('content', '#ffffff');
+					metaThemeColorTag.setAttribute('content', '#ff6b35');
 				} else if (localStorage.theme === 'her') {
 					document.documentElement.classList.add('dark');
 					document.documentElement.classList.add('her');
 					metaThemeColorTag.setAttribute('content', '#983724');
 				} else {
 					document.documentElement.classList.add('dark');
-					metaThemeColorTag.setAttribute('content', '#171717');
+					metaThemeColorTag.setAttribute('content', '#ff6b35');
 				}
 
 				window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
@@ -69,11 +69,11 @@
 						if (e.matches) {
 							document.documentElement.classList.add('dark');
 							document.documentElement.classList.remove('light');
-							metaThemeColorTag.setAttribute('content', '#171717');
+							metaThemeColorTag.setAttribute('content', '#ff6b35');
 						} else {
 							document.documentElement.classList.add('light');
 							document.documentElement.classList.remove('dark');
-							metaThemeColorTag.setAttribute('content', '#ffffff');
+							metaThemeColorTag.setAttribute('content', '#ff6b35');
 						}
 					}
 				});
@@ -92,7 +92,37 @@
 			})();
 		</script>
 
-		<title>Open WebUI</title>
+		<title>SneakyHub AI - Developer-Focused AI Assistant</title>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://sneakyhub.ai/" />
+		<meta property="og:title" content="SneakyHub AI - Developer-Focused AI Assistant" />
+		<meta property="og:description" content="Advanced AI assistant specialized for developers. Expert in coding, debugging, config creation, and development workflows. Streamline your development process with intelligent assistance." />
+		<meta property="og:image" content="https://sneakyhub.ai/static/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="SneakyHub AI" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://sneakyhub.ai/" />
+		<meta property="twitter:title" content="SneakyHub AI - Developer-Focused AI Assistant" />
+		<meta property="twitter:description" content="Advanced AI assistant specialized for developers. Expert in coding, debugging, config creation, and development workflows." />
+		<meta property="twitter:image" content="https://sneakyhub.ai/static/og-image.png" />
+		<meta property="twitter:creator" content="@SneakyHubAI" />
+		<meta property="twitter:site" content="@SneakyHubAI" />
+
+		<!-- Discord specific -->
+		<meta property="discord:color" content="#ff6b35" />
+		<meta name="theme-color" content="#ff6b35" />
+
+		<!-- Additional SEO -->
+		<meta name="keywords" content="AI assistant, developer tools, coding help, debugging, config creation, development workflow, programming assistant, code review, developer AI" />
+		<meta name="author" content="SneakyHub AI" />
+		<meta name="application-name" content="SneakyHub AI" />
+		<meta name="msapplication-TileColor" content="#ff6b35" />
+		<meta name="msapplication-config" content="/static/browserconfig.xml" />
 
 		%sveltekit.head%
 	</head>

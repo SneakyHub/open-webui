@@ -1,1 +1,44 @@
-{}
+{
+  "name": "SneakyHub AI - Developer-Focused AI Assistant",
+  "short_name": "SneakyHub AI",
+  "description": "Advanced AI assistant specialized for developers. Expert in coding, debugging, config creation, and development workflows.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "developer", "utilities"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/static/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Chat",
+      "short_name": "New Chat",
+      "description": "Start a new conversation with SneakyHub AI",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/static/favicon.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
