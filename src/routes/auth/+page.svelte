@@ -329,7 +329,7 @@
 
 										{#if $config?.onboarding ?? false}
 											<div class="text-sm text-orange-200">
-												\u{1F512} Your data stays secure on your locally hosted server
+												🔒 Your data stays secure on your locally hosted server
 											</div>
 										{:else}
 											<div class="text-sm text-orange-200">
