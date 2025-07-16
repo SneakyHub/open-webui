@@ -575,6 +575,211 @@ a:hover, .text-blue-600:hover, .dark\:text-blue-400:hover {
     box-shadow: 0 0 0 2px var(--orange-primary) !important;
 }
 
+/* Refined Chat Area Styling - Maximum Readability */
+
+/* Main chat container - Pure black background */
+#chat-container {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Messages container - Pure black background */
+#messages-container {
+    background-color: var(--bg-primary) !important;
+}
+
+/* Individual message styling - High contrast */
+.user-message {
+    background-color: transparent !important;
+}
+
+.assistant-message {
+    background-color: transparent !important;
+}
+
+/* Message bubbles - Subtle dark backgrounds */
+.user-message .rounded-3xl {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+.assistant-message .rounded-3xl {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Message input area - Clean styling */
+.message-input {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+.message-input:focus {
+    border-color: var(--orange-primary) !important;
+    box-shadow: 0 0 0 2px var(--orange-glow) !important;
+}
+
+/* Send button - Orange accent */
+.send-button,
+.bg-black.rounded-full,
+.dark\:bg-white.rounded-full {
+    background-color: var(--orange-primary) !important;
+    color: white !important;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+
+.send-button:hover,
+.bg-black.rounded-full:hover,
+.dark\:bg-white.rounded-full:hover {
+    background-color: var(--orange-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Model selector - Clean styling */
+.model-selector {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+.model-selector:hover {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--border-light) !important;
+}
+
+/* Navbar - Clean background */
+.navbar {
+    background-color: var(--bg-primary) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+/* Placeholder text - High contrast */
+.placeholder-text {
+    color: var(--text-muted) !important;
+}
+
+/* Loading spinner - Orange accent */
+.spinner {
+    color: var(--orange-primary) !important;
+}
+
+/* Message actions - Subtle styling */
+.message-actions button {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+    transition: all 0.2s ease;
+}
+
+.message-actions button:hover {
+    background-color: var(--bg-card-hover) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-light) !important;
+}
+
+/* Copy button - Orange accent on hover */
+.copy-button:hover {
+    background-color: var(--orange-primary) !important;
+    color: white !important;
+}
+
+/* File upload area - Clean styling */
+.file-upload {
+    background-color: var(--bg-elevated) !important;
+    border: 2px dashed var(--border) !important;
+    color: var(--text-secondary) !important;
+    transition: all 0.2s ease;
+}
+
+.file-upload:hover,
+.file-upload.drag-over {
+    background-color: var(--orange-glow) !important;
+    border-color: var(--orange-primary) !important;
+    color: var(--orange-primary) !important;
+}
+
+/* File items - Clean styling */
+.file-item {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tool toggles - Orange accents */
+.tool-toggle.active {
+    background-color: var(--orange-primary) !important;
+    color: white !important;
+}
+
+.tool-toggle:hover {
+    background-color: var(--orange-glow) !important;
+    color: var(--orange-primary) !important;
+}
+
+/* Timestamps - Subtle styling */
+.timestamp {
+    color: var(--text-muted) !important;
+}
+
+/* Status indicators - Clean styling */
+.status-indicator {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Message meta info - Subtle styling */
+.message-meta {
+    color: var(--text-muted) !important;
+}
+
+/* Ensure all text has proper contrast */
+p, span, div, h1, h2, h3, h4, h5, h6 {
+    color: inherit !important;
+}
+
+/* Override any remaining orange backgrounds that hurt readability */
+.bg-orange-50,
+.bg-orange-100,
+.bg-orange-200 {
+    background-color: var(--bg-card) !important;
+}
+
+.dark\:bg-orange-900,
+.dark\:bg-orange-800,
+.dark\:bg-orange-700 {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* Text color overrides for better readability */
+.text-orange-500,
+.text-orange-600,
+.text-orange-700 {
+    color: var(--orange-primary) !important;
+}
+
+.dark\:text-orange-400,
+.dark\:text-orange-300,
+.dark\:text-orange-200 {
+    color: var(--orange-secondary) !important;
+}
+
+/* High contrast text selection for better readability */
+::selection {
+    background-color: rgba(255, 107, 53, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
+::-moz-selection {
+    background-color: rgba(255, 107, 53, 0.25) !important;
+    color: var(--text-primary) !important;
+}
+
 @font-face {
 	font-family: 'Inter';
 	src: url('/assets/fonts/Inter-Variable.ttf');
