@@ -1,5 +1,570 @@
 @reference "./tailwind.css";
 
+/* SneakyHub AI Black & Orange Theme */
+:root {
+    /* Core Colors */
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #242427;
+    --bg-card-hover: #2a2a2e;
+    --bg-elevated: #313137;
+    --bg-darker: #0a0a0a;
+    
+    /* Brand Colors */
+    --orange-primary: #ff6b35;
+    --orange-secondary: #ff8c42;
+    --orange-light: #ffb366;
+    --orange-dark: #e55a2e;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --text-muted: #6b6b6b;
+    --text-inverse: #ffffff;
+    
+    /* Accent Colors */
+    --accent-blue: #3b82f6;
+    --accent-green: #10b981;
+    --accent-purple: #8b5cf6;
+    --accent-red: #ef4444;
+    --accent-yellow: #f59e0b;
+    --accent-info: #17a2b8;
+    
+    /* Border & Shadow */
+    --border: #333338;
+    --border-light: #404047;
+    --border-lighter: #4a4a52;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    
+    /* Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* Animations */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Overrides */
+body {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Dark theme base overrides */
+.dark {
+    --tw-bg-opacity: 1;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Main app layout */
+.app {
+    background: var(--bg-primary) !important;
+}
+
+/* Sidebar overrides */
+.bg-gray-50 {
+    background-color: var(--bg-secondary) !important;
+}
+
+.dark\:bg-gray-950 {
+    background-color: var(--bg-secondary) !important;
+}
+
+.bg-white {
+    background-color: var(--bg-primary) !important;
+}
+
+.dark\:bg-gray-900 {
+    background-color: var(--bg-primary) !important;
+}
+
+/* Text color overrides */
+.text-gray-700 {
+    color: var(--text-secondary) !important;
+}
+
+.dark\:text-gray-100 {
+    color: var(--text-primary) !important;
+}
+
+.text-gray-600 {
+    color: var(--text-muted) !important;
+}
+
+.dark\:text-gray-300 {
+    color: var(--text-secondary) !important;
+}
+
+/* Border overrides */
+.border-gray-100 {
+    border-color: var(--border) !important;
+}
+
+.dark\:border-gray-900 {
+    border-color: var(--border) !important;
+}
+
+.dark\:border-gray-800 {
+    border-color: var(--border-light) !important;
+}
+
+/* Button overrides */
+.bg-gray-100 {
+    background-color: var(--bg-card) !important;
+}
+
+.dark\:bg-gray-800 {
+    background-color: var(--bg-card) !important;
+}
+
+.hover\:bg-gray-200:hover {
+    background-color: var(--bg-card-hover) !important;
+}
+
+.dark\:hover\:bg-gray-700:hover {
+    background-color: var(--bg-card-hover) !important;
+}
+
+/* Primary button styling */
+.bg-black {
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary)) !important;
+    color: white !important;
+}
+
+.dark\:bg-white {
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary)) !important;
+    color: white !important;
+}
+
+.hover\:bg-gray-900:hover {
+    background: linear-gradient(135deg, var(--orange-dark), var(--orange-primary)) !important;
+}
+
+.dark\:hover\:bg-gray-100:hover {
+    background: linear-gradient(135deg, var(--orange-dark), var(--orange-primary)) !important;
+}
+
+/* Focus states */
+.focus\:ring-gray-300:focus {
+    --tw-ring-color: var(--orange-primary) !important;
+}
+
+.dark\:focus\:ring-gray-800:focus {
+    --tw-ring-color: var(--orange-primary) !important;
+}
+
+/* Card styling */
+.bg-gray-50 {
+    background-color: var(--bg-card) !important;
+}
+
+.dark\:bg-gray-850 {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* Form controls */
+input, textarea, select {
+    background-color: var(--bg-elevated) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--orange-primary) !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
+}
+
+/* Scrollbar overrides */
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-light) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange-primary) !important;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background-color: var(--border-light) !important;
+}
+
+/* Toast/notification overrides */
+.bg-gray-200 {
+    background-color: var(--bg-elevated) !important;
+}
+
+.dark\:bg-gray-700 {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* Active/selected states */
+.bg-gray-300 {
+    background-color: var(--bg-card-hover) !important;
+}
+
+.dark\:bg-gray-600 {
+    background-color: var(--bg-card-hover) !important;
+}
+
+/* Special orange accents for links and highlights */
+a, .text-blue-600, .dark\:text-blue-400 {
+    color: var(--orange-primary) !important;
+}
+
+a:hover, .text-blue-600:hover, .dark\:text-blue-400:hover {
+    color: var(--orange-secondary) !important;
+}
+
+/* Badge/tag styling */
+.bg-blue-100 {
+    background-color: rgba(255, 107, 53, 0.1) !important;
+    color: var(--orange-primary) !important;
+}
+
+.dark\:bg-blue-900 {
+    background-color: rgba(255, 107, 53, 0.1) !important;
+    color: var(--orange-primary) !important;
+}
+
+/* Success states */
+.bg-green-100 {
+    background-color: rgba(16, 185, 129, 0.1) !important;
+    color: var(--accent-green) !important;
+}
+
+.dark\:bg-green-900 {
+    background-color: rgba(16, 185, 129, 0.1) !important;
+    color: var(--accent-green) !important;
+}
+
+/* Error states */
+.bg-red-100 {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: var(--accent-red) !important;
+}
+
+.dark\:bg-red-900 {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: var(--accent-red) !important;
+}
+
+/* Warning states */
+.bg-yellow-100 {
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    color: var(--accent-yellow) !important;
+}
+
+.dark\:bg-yellow-900 {
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    color: var(--accent-yellow) !important;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to main content */
+.app > * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Code block styling updates */
+.hljs {
+    background-color: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Code span styling */
+.codespan {
+    background-color: var(--bg-elevated) !important;
+    color: var(--orange-primary) !important;
+}
+
+/* Tooltip styling */
+.tippy-box[data-theme~='dark'] {
+    background-color: var(--bg-elevated) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Chat Area Specific Styling */
+/* Message containers */
+.group .rounded-lg {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    backdrop-filter: blur(20px);
+    transition: all var(--transition-normal);
+}
+
+.group:hover .rounded-lg {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--border-light) !important;
+    box-shadow: var(--shadow-md);
+}
+
+/* User message bubbles */
+.bg-gray-50.rounded-3xl {
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.dark\:bg-gray-800.rounded-3xl {
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Assistant/AI response styling */
+.bg-white.rounded-3xl {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%) !important;
+    border: 1px solid var(--orange-primary)/20 !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Chat input area */
+.bg-gray-50.rounded-full,
+.dark\:bg-gray-850.rounded-full {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%) !important;
+    border: 2px solid var(--border) !important;
+    transition: all var(--transition-normal);
+}
+
+.bg-gray-50.rounded-full:focus-within,
+.dark\:bg-gray-850.rounded-full:focus-within {
+    border-color: var(--orange-primary) !important;
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1) !important;
+}
+
+/* Send button styling */
+.bg-black.rounded-full,
+.dark\:bg-white.rounded-full {
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary)) !important;
+    color: white !important;
+    border: none !important;
+    transition: all var(--transition-normal);
+}
+
+.bg-black.rounded-full:hover,
+.dark\:bg-white.rounded-full:hover {
+    background: linear-gradient(135deg, var(--orange-dark), var(--orange-primary)) !important;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Model selector */
+.rounded-2xl {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    transition: all var(--transition-normal);
+}
+
+.rounded-2xl:hover {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--orange-primary) !important;
+    box-shadow: var(--shadow-md);
+}
+
+/* Chat controls and buttons */
+.bg-gray-200.hover\:bg-gray-300,
+.dark\:bg-gray-700.dark\:hover\:bg-gray-600 {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    transition: all var(--transition-normal);
+}
+
+.bg-gray-200.hover\:bg-gray-300:hover,
+.dark\:bg-gray-700.dark\:hover\:bg-gray-600:hover {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--orange-primary) !important;
+    transform: translateY(-1px);
+}
+
+/* Message actions (copy, edit, delete buttons) */
+.group-hover\:visible {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+    border-radius: var(--radius-md) !important;
+    transition: all var(--transition-fast);
+}
+
+.group-hover\:visible:hover {
+    background-color: var(--orange-primary) !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+/* Code blocks in messages */
+.bg-gray-100.rounded-lg,
+.dark\:bg-gray-800.rounded-lg {
+    background-color: var(--bg-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Copy code button */
+.copy-code-button {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+    transition: all var(--transition-fast);
+}
+
+.copy-code-button:hover {
+    background: linear-gradient(135deg, var(--orange-primary), var(--orange-secondary)) !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+/* Chat navigation and breadcrumbs */
+.breadcrumb {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+}
+
+.breadcrumb a {
+    color: var(--orange-primary) !important;
+}
+
+.breadcrumb a:hover {
+    color: var(--orange-secondary) !important;
+}
+
+/* Sidebar chat list items */
+.chat-item {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    transition: all var(--transition-normal);
+}
+
+.chat-item:hover {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--border) !important;
+}
+
+.chat-item.active {
+    background: linear-gradient(135deg, var(--orange-primary)/10, var(--orange-secondary)/10) !important;
+    border-color: var(--orange-primary) !important;
+}
+
+/* Loading indicators */
+.animate-pulse {
+    background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-elevated) 50%, var(--bg-card) 75%) !important;
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+/* File upload areas */
+.drag-over {
+    background-color: rgba(255, 107, 53, 0.1) !important;
+    border: 2px dashed var(--orange-primary) !important;
+}
+
+/* Settings modal */
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow-xl) !important;
+}
+
+/* Toggle switches */
+.toggle-switch {
+    background-color: var(--border) !important;
+    transition: all var(--transition-normal);
+}
+
+.toggle-switch.active {
+    background-color: var(--orange-primary) !important;
+}
+
+/* Progress bars */
+.progress-bar {
+    background-color: var(--bg-elevated) !important;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--orange-primary), var(--orange-secondary)) !important;
+}
+
+/* Notifications and toasts */
+.toast {
+    background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card)) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-xl) !important;
+}
+
+/* Search results */
+.search-result {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    transition: all var(--transition-normal);
+}
+
+.search-result:hover {
+    background-color: var(--bg-card-hover) !important;
+    border-color: var(--orange-primary) !important;
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Selection styling */
+::selection {
+    background-color: rgba(255, 107, 53, 0.3) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Focus ring styling for all interactive elements */
+*:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px var(--orange-primary) !important;
+}
+
 @font-face {
 	font-family: 'Inter';
 	src: url('/assets/fonts/Inter-Variable.ttf');
