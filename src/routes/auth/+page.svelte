@@ -226,23 +226,87 @@
 					</div>
 				{:else}
 					<div class="my-auto flex flex-col justify-center items-center">
-						<div class="sm:max-w-md my-auto pb-10 w-full">
-							<!-- SneakyHub AI Hero Section -->
-							<div class="mb-8 text-center">
-								<div class="relative inline-block mb-4">
+						<!-- Hero Section -->
+						<div class="max-w-4xl mx-auto mb-12 text-center">
+							<div class="mb-8">
+								<div class="relative inline-block mb-6">
 									<div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl blur-lg opacity-30"></div>
-									<div class="relative bg-black/30 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-6">
-										<h1 class="text-3xl font-bold mb-2">
+									<div class="relative bg-black/30 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-8">
+										<h1 class="text-4xl md:text-5xl font-bold mb-4">
 											<span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
 											<span class="text-white ml-2">AI</span>
 										</h1>
-										<p class="text-orange-200 text-sm">Advanced AI Platform</p>
+										<p class="text-orange-200 text-lg mb-4">Developer-Focused AI Assistant</p>
+										<p class="text-orange-100/80 text-sm max-w-2xl mx-auto leading-relaxed">
+											Advanced AI platform designed specifically for developers. Expert in coding, debugging, 
+											config creation, and development workflows. Streamline your development process with 
+											intelligent assistance.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Features Grid -->
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+								<!-- Coding Assistant -->
+								<div class="bg-black/20 backdrop-blur-sm border border-orange-500/20 rounded-xl p-6 hover:border-orange-500/40 transition-all duration-300">
+									<div class="text-orange-400 mb-4">
+										<svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+										</svg>
+									</div>
+									<h3 class="text-white font-semibold mb-2 text-center">Code Generation</h3>
+									<p class="text-orange-200/70 text-sm text-center">Generate, optimize, and review code in multiple programming languages</p>
+								</div>
+
+								<!-- Debugging -->
+								<div class="bg-black/20 backdrop-blur-sm border border-orange-500/20 rounded-xl p-6 hover:border-orange-500/40 transition-all duration-300">
+									<div class="text-orange-400 mb-4">
+										<svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+										</svg>
+									</div>
+									<h3 class="text-white font-semibold mb-2 text-center">Debug & Fix</h3>
+									<p class="text-orange-200/70 text-sm text-center">Identify bugs, analyze errors, and provide solutions with detailed explanations</p>
+								</div>
+
+								<!-- Configuration -->
+								<div class="bg-black/20 backdrop-blur-sm border border-orange-500/20 rounded-xl p-6 hover:border-orange-500/40 transition-all duration-300">
+									<div class="text-orange-400 mb-4">
+										<svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+										</svg>
+									</div>
+									<h3 class="text-white font-semibold mb-2 text-center">Config Creation</h3>
+									<p class="text-orange-200/70 text-sm text-center">Create and optimize configurations for servers, databases, and development tools</p>
+								</div>
+							</div>
+
+							<!-- Developer Tools Showcase -->
+							<div class="bg-black/20 backdrop-blur-sm border border-orange-500/20 rounded-xl p-8 mb-12">
+								<h3 class="text-white font-semibold text-xl mb-6 text-center">Built for Developers</h3>
+								<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+									<div class="text-center">
+										<div class="text-orange-400 mb-2">⚡</div>
+										<span class="text-orange-200 text-sm">Fast Responses</span>
+									</div>
+									<div class="text-center">
+										<div class="text-orange-400 mb-2">🔒</div>
+										<span class="text-orange-200 text-sm">Self-Hosted</span>
+									</div>
+									<div class="text-center">
+										<div class="text-orange-400 mb-2">🛠️</div>
+										<span class="text-orange-200 text-sm">Multi-Language</span>
+									</div>
+									<div class="text-center">
+										<div class="text-orange-400 mb-2">📖</div>
+										<span class="text-orange-200 text-sm">Detailed Docs</span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="sm:max-w-md my-auto pb-10 w-full text-white">
-							<div class="relative backdrop-blur-sm bg-black/10 border border-orange-500/20 rounded-2xl p-8 shadow-2xl">
+						<div class="sm:max-w-md w-full text-white">
+							<div class="relative backdrop-blur-sm bg-black/20 border border-orange-500/30 rounded-2xl p-8 shadow-2xl">
 								<form
 									class="flex flex-col justify-center"
 									on:submit={(e) => {
@@ -250,12 +314,12 @@
 										submitHandler();
 									}}
 								>
-									<div class="mb-6">
-										<div class="text-2xl font-medium text-center text-white">
+									<div class="mb-6 text-center">
+										<div class="text-2xl font-medium text-white mb-2">
 											{#if $config?.onboarding ?? false}
 												{$i18n.t(`Get started with SneakyHub AI`)}
 											{:else if mode === 'ldap'}
-												{$i18n.t(`Sign in to SneakyHub AI with LDAP`)}
+												{$i18n.t(`Sign in with LDAP`)}
 											{:else if mode === 'signin'}
 												{$i18n.t(`Welcome back`)}
 											{:else}
@@ -264,12 +328,12 @@
 										</div>
 
 										{#if $config?.onboarding ?? false}
-											<div class="mt-3 text-sm text-orange-200 text-center">
-												ⓘ Your data stays secure on your locally hosted server
+											<div class="text-sm text-orange-200">
+												\u{1F512} Your data stays secure on your locally hosted server
 											</div>
 										{:else}
-											<div class="mt-2 text-sm text-orange-200 text-center">
-												{mode === 'signin' ? 'Access your AI workspace' : 'Create your AI workspace'}
+											<div class="text-sm text-orange-200">
+												{mode === 'signin' ? 'Access your developer AI workspace' : 'Create your developer AI workspace'}
 											</div>
 										{/if}
 									</div>
