@@ -172,37 +172,51 @@
 	}}
 />
 
-<div class="w-full h-screen max-h-[100dvh] text-white relative">
-	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
+<div class="w-full h-screen max-h-[100dvh] text-white relative overflow-hidden">
+	<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-black">
+		<!-- Animated background elements -->
+		<div class="absolute inset-0">
+			<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+		</div>
+		<!-- Grid overlay -->
+		<div class="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+	</div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
 	{#if loaded}
 		<div class="fixed m-10 z-50">
-			<div class="flex space-x-2">
-				<div class=" self-center">
+			<div class="flex items-center space-x-3">
+				<div class="relative">
+					<div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-sm opacity-75"></div>
 					<img
 						id="logo"
 						crossorigin="anonymous"
 						src="{WEBUI_BASE_URL}/static/favicon.png"
-						class=" w-6 rounded-full"
-						alt=""
+						class="relative w-8 h-8 rounded-full"
+						alt="SneakyHub AI"
 					/>
+				</div>
+				<div class="text-white font-bold text-xl tracking-wide">
+					<span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">SneakyHub</span>
+					<span class="text-gray-300 ml-1">AI</span>
 				</div>
 			</div>
 		</div>
 
 		<div
-			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-black dark:text-white"
+			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-white"
 		>
 			<div class="w-full px-10 min-h-screen flex flex-col text-center">
 				{#if ($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false}
 					<div class=" my-auto pb-10 w-full sm:max-w-md">
 						<div
-							class="flex items-center justify-center gap-3 text-xl sm:text-2xl text-center font-semibold dark:text-gray-200"
+							class="flex items-center justify-center gap-3 text-xl sm:text-2xl text-center font-semibold text-white"
 						>
 							<div>
-								{$i18n.t('Signing in to {{WEBUI_NAME}}', { WEBUI_NAME: $WEBUI_NAME })}
+								{$i18n.t('Signing in to SneakyHub AI')}
 							</div>
 
 							<div>
@@ -212,49 +226,66 @@
 					</div>
 				{:else}
 					<div class="my-auto flex flex-col justify-center items-center">
-						<div class=" sm:max-w-md my-auto pb-10 w-full dark:text-gray-100">
-							<form
-								class=" flex flex-col justify-center"
-								on:submit={(e) => {
-									e.preventDefault();
-									submitHandler();
-								}}
-							>
-								<div class="mb-1">
-									<div class=" text-2xl font-medium">
+						<div class="sm:max-w-md my-auto pb-10 w-full">
+							<!-- SneakyHub AI Hero Section -->
+							<div class="mb-8 text-center">
+								<div class="relative inline-block mb-4">
+									<div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl blur-lg opacity-30"></div>
+									<div class="relative bg-black/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6">
+										<h1 class="text-3xl font-bold mb-2">
+											<span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">SneakyHub</span>
+											<span class="text-white ml-2">AI</span>
+										</h1>
+										<p class="text-purple-200 text-sm">Advanced AI Platform</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sm:max-w-md my-auto pb-10 w-full text-white">
+							<div class="relative backdrop-blur-sm bg-black/10 border border-purple-500/20 rounded-2xl p-8 shadow-2xl">
+								<form
+									class="flex flex-col justify-center"
+									on:submit={(e) => {
+										e.preventDefault();
+										submitHandler();
+									}}
+								>
+									<div class="mb-6">
+										<div class="text-2xl font-medium text-center text-white">
+											{#if $config?.onboarding ?? false}
+												{$i18n.t(`Get started with SneakyHub AI`)}
+											{:else if mode === 'ldap'}
+												{$i18n.t(`Sign in to SneakyHub AI with LDAP`)}
+											{:else if mode === 'signin'}
+												{$i18n.t(`Welcome back`)}
+											{:else}
+												{$i18n.t(`Join SneakyHub AI`)}
+											{/if}
+										</div>
+
 										{#if $config?.onboarding ?? false}
-											{$i18n.t(`Get started with {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
-										{:else if mode === 'ldap'}
-											{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
-										{:else if mode === 'signin'}
-											{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											<div class="mt-3 text-sm text-purple-200 text-center">
+												ⓘ Your data stays secure on your locally hosted server
+											</div>
 										{:else}
-											{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											<div class="mt-2 text-sm text-purple-200 text-center">
+												{mode === 'signin' ? 'Access your AI workspace' : 'Create your AI workspace'}
+											</div>
 										{/if}
 									</div>
 
-									{#if $config?.onboarding ?? false}
-										<div class="mt-1 text-xs font-medium text-gray-600 dark:text-gray-500">
-											ⓘ {$WEBUI_NAME}
-											{$i18n.t(
-												'does not make any external connections, and your data stays securely on your locally hosted server.'
-											)}
-										</div>
-									{/if}
-								</div>
-
 								{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
-									<div class="flex flex-col mt-4">
+									<div class="flex flex-col mt-4 space-y-4">
 										{#if mode === 'signup'}
-											<div class="mb-2">
-												<label for="name" class="text-sm font-medium text-left mb-1 block"
+											<div>
+												<label for="name" class="text-sm font-medium text-purple-200 mb-2 block"
 													>{$i18n.t('Name')}</label
 												>
 												<input
 													bind:value={name}
 													type="text"
 													id="name"
-													class="my-0.5 w-full text-sm outline-hidden bg-transparent"
+													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
 													autocomplete="name"
 													placeholder={$i18n.t('Enter Your Full Name')}
 													required
@@ -263,14 +294,14 @@
 										{/if}
 
 										{#if mode === 'ldap'}
-											<div class="mb-2">
-												<label for="username" class="text-sm font-medium text-left mb-1 block"
+											<div>
+												<label for="username" class="text-sm font-medium text-purple-200 mb-2 block"
 													>{$i18n.t('Username')}</label
 												>
 												<input
 													bind:value={ldapUsername}
 													type="text"
-													class="my-0.5 w-full text-sm outline-hidden bg-transparent"
+													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
 													autocomplete="username"
 													name="username"
 													id="username"
@@ -279,15 +310,15 @@
 												/>
 											</div>
 										{:else}
-											<div class="mb-2">
-												<label for="email" class="text-sm font-medium text-left mb-1 block"
+											<div>
+												<label for="email" class="text-sm font-medium text-purple-200 mb-2 block"
 													>{$i18n.t('Email')}</label
 												>
 												<input
 													bind:value={email}
 													type="email"
 													id="email"
-													class="my-0.5 w-full text-sm outline-hidden bg-transparent"
+													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
 													autocomplete="email"
 													name="email"
 													placeholder={$i18n.t('Enter Your Email')}
@@ -297,14 +328,14 @@
 										{/if}
 
 										<div>
-											<label for="password" class="text-sm font-medium text-left mb-1 block"
+											<label for="password" class="text-sm font-medium text-purple-200 mb-2 block"
 												>{$i18n.t('Password')}</label
 											>
 											<input
 												bind:value={password}
 												type="password"
 												id="password"
-												class="my-0.5 w-full text-sm outline-hidden bg-transparent"
+												class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
 												placeholder={$i18n.t('Enter Your Password')}
 												autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
 												name="password"
@@ -313,18 +344,18 @@
 										</div>
 									</div>
 								{/if}
-								<div class="mt-5">
+								<div class="mt-8">
 									{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 										{#if mode === 'ldap'}
 											<button
-												class="bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+												class="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-transparent"
 												type="submit"
 											>
 												{$i18n.t('Authenticate')}
 											</button>
 										{:else}
 											<button
-												class="bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+												class="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-transparent"
 												type="submit"
 											>
 												{mode === 'signin'
@@ -335,13 +366,15 @@
 											</button>
 
 											{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
-												<div class=" mt-4 text-sm text-center">
-													{mode === 'signin'
-														? $i18n.t("Don't have an account?")
-														: $i18n.t('Already have an account?')}
+												<div class="mt-6 text-sm text-center">
+													<span class="text-purple-200">
+														{mode === 'signin'
+															? $i18n.t("Don't have an account?")
+															: $i18n.t('Already have an account?')}
+													</span>
 
 													<button
-														class=" font-medium underline"
+														class="ml-2 font-medium text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
 														type="button"
 														on:click={() => {
 															if (mode === 'signin') {
@@ -358,24 +391,25 @@
 										{/if}
 									{/if}
 								</div>
-							</form>
+								</form>
+							</div>
 
 							{#if Object.keys($config?.oauth?.providers ?? {}).length > 0}
-								<div class="inline-flex items-center justify-center w-full">
-									<hr class="w-32 h-px my-4 border-0 dark:bg-gray-100/10 bg-gray-700/10" />
+								<div class="inline-flex items-center justify-center w-full mt-6">
+									<hr class="w-32 h-px my-4 border-0 bg-purple-500/20" />
 									{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 										<span
-											class="px-3 text-sm font-medium text-gray-900 dark:text-white bg-transparent"
+											class="px-3 text-sm font-medium text-purple-200 bg-transparent"
 											>{$i18n.t('or')}</span
 										>
 									{/if}
 
-									<hr class="w-32 h-px my-4 border-0 dark:bg-gray-100/10 bg-gray-700/10" />
+									<hr class="w-32 h-px my-4 border-0 bg-purple-500/20" />
 								</div>
-								<div class="flex flex-col space-y-2">
+								<div class="flex flex-col space-y-3">
 									{#if $config?.oauth?.providers?.google}
 										<button
-											class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/google/login`;
 											}}
@@ -404,7 +438,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.microsoft}
 										<button
-											class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/microsoft/login`;
 											}}
@@ -434,7 +468,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.github}
 										<button
-											class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/github/login`;
 											}}
@@ -454,7 +488,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.oidc}
 										<button
-											class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/oidc/login`;
 											}}
@@ -485,9 +519,9 @@
 							{/if}
 
 							{#if $config?.features.enable_ldap && $config?.features.enable_login_form}
-								<div class="mt-2">
+								<div class="mt-4">
 									<button
-										class="flex justify-center items-center text-xs w-full text-center underline"
+										class="flex justify-center items-center text-sm w-full text-center text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
 										type="button"
 										on:click={() => {
 											if (mode === 'ldap')
@@ -506,7 +540,7 @@
 						</div>
 						{#if $config?.metadata?.login_footer}
 							<div class="max-w-3xl mx-auto">
-								<div class="mt-2 text-[0.7rem] text-gray-500 dark:text-gray-400 marked">
+								<div class="mt-4 text-xs text-purple-300/70 marked text-center">
 									{@html DOMPurify.sanitize(marked($config?.metadata?.login_footer))}
 								</div>
 							</div>

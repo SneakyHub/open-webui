@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npx svelte-check:*)",
+      "Bash(docker cp:*)"
+    ],
+    "deny": []
+  }
+}
