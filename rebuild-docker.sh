@@ -14,10 +14,11 @@ NC='\033[0m' # No Color
 
 # Configuration
 CONTAINER_NAME="open-webui"
-IMAGE_NAME="sneakyhub-open-webui"
+IMAGE_NAME="sneakyhub-ai"
 GITHUB_REPO="https://github.com/SneakyHub/open-webui.git"
 BUILD_DIR="/tmp/open-webui-build"
-PORT="3000"
+PORT="8081"
+OLLAMA_BASE_URL="http://127.0.0.1:11435"
 
 # Function to print colored output
 print_status() {
@@ -141,14 +142,17 @@ run_container() {
     print_status "Starting new container..."
     
     docker run -d \
-        --name "$CONTAINER_NAME" \
-        -p "$PORT:8080" \
+        --network=host \
         -v open-webui:/app/backend/data \
-        --restart unless-stopped \
+        -e OLLAMA_BASE_URL="$OLLAMA_BASE_URL" \
+        -e PORT="$PORT" \
+        --name "$CONTAINER_NAME" \
+        --restart always \
         "$IMAGE_NAME"
     
     print_success "Container started successfully"
-    print_status "Container is running on port $PORT"
+    print_status "Container is running on port $PORT (host network mode)"
+    print_status "Ollama URL: $OLLAMA_BASE_URL"
     print_status "You can access SneakyHub AI at: http://localhost:$PORT"
 }
 
@@ -208,6 +212,7 @@ main() {
     print_success "Rebuild completed successfully!"
     echo -e "${GREEN}Your SneakyHub AI instance is now running with the latest changes.${NC}"
     echo -e "${BLUE}Access it at: http://localhost:$PORT${NC}"
+    echo -e "${BLUE}Ollama connection: $OLLAMA_BASE_URL${NC}"
     echo
     
     # Optional: Show useful commands
@@ -216,6 +221,7 @@ main() {
     echo "  Stop container: docker stop $CONTAINER_NAME"
     echo "  Restart container: docker restart $CONTAINER_NAME"
     echo "  Remove container: docker rm $CONTAINER_NAME"
+    echo "  Check Ollama status: curl -s $OLLAMA_BASE_URL/api/tags"
     echo
 }
 
