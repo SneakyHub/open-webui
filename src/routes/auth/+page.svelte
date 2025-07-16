@@ -173,15 +173,15 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative overflow-hidden">
-	<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-black">
+	<div class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-black via-gray-900 to-black">
 		<!-- Animated background elements -->
 		<div class="absolute inset-0">
-			<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+			<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-orange-500/15 rounded-full blur-3xl animate-pulse"></div>
+			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-400/12 rounded-full blur-3xl animate-pulse delay-500"></div>
 		</div>
 		<!-- Grid overlay -->
-		<div class="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+		<div class="absolute inset-0 bg-[linear-gradient(rgba(249,115,22,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(249,115,22,0.04)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 	</div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
@@ -190,7 +190,7 @@
 		<div class="fixed m-10 z-50">
 			<div class="flex items-center space-x-3">
 				<div class="relative">
-					<div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-sm opacity-75"></div>
+					<div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full blur-sm opacity-75"></div>
 					<img
 						id="logo"
 						crossorigin="anonymous"
@@ -200,8 +200,8 @@
 					/>
 				</div>
 				<div class="text-white font-bold text-xl tracking-wide">
-					<span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">SneakyHub</span>
-					<span class="text-gray-300 ml-1">AI</span>
+					<span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
+					<span class="text-orange-100 ml-1">AI</span>
 				</div>
 			</div>
 		</div>
@@ -230,19 +230,19 @@
 							<!-- SneakyHub AI Hero Section -->
 							<div class="mb-8 text-center">
 								<div class="relative inline-block mb-4">
-									<div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl blur-lg opacity-30"></div>
-									<div class="relative bg-black/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6">
+									<div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl blur-lg opacity-30"></div>
+									<div class="relative bg-black/30 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-6">
 										<h1 class="text-3xl font-bold mb-2">
-											<span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">SneakyHub</span>
+											<span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
 											<span class="text-white ml-2">AI</span>
 										</h1>
-										<p class="text-purple-200 text-sm">Advanced AI Platform</p>
+										<p class="text-orange-200 text-sm">Advanced AI Platform</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="sm:max-w-md my-auto pb-10 w-full text-white">
-							<div class="relative backdrop-blur-sm bg-black/10 border border-purple-500/20 rounded-2xl p-8 shadow-2xl">
+							<div class="relative backdrop-blur-sm bg-black/10 border border-orange-500/20 rounded-2xl p-8 shadow-2xl">
 								<form
 									class="flex flex-col justify-center"
 									on:submit={(e) => {
@@ -264,11 +264,11 @@
 										</div>
 
 										{#if $config?.onboarding ?? false}
-											<div class="mt-3 text-sm text-purple-200 text-center">
+											<div class="mt-3 text-sm text-orange-200 text-center">
 												ⓘ Your data stays secure on your locally hosted server
 											</div>
 										{:else}
-											<div class="mt-2 text-sm text-purple-200 text-center">
+											<div class="mt-2 text-sm text-orange-200 text-center">
 												{mode === 'signin' ? 'Access your AI workspace' : 'Create your AI workspace'}
 											</div>
 										{/if}
@@ -278,14 +278,14 @@
 									<div class="flex flex-col mt-4 space-y-4">
 										{#if mode === 'signup'}
 											<div>
-												<label for="name" class="text-sm font-medium text-purple-200 mb-2 block"
+												<label for="name" class="text-sm font-medium text-orange-200 mb-2 block"
 													>{$i18n.t('Name')}</label
 												>
 												<input
 													bind:value={name}
 													type="text"
 													id="name"
-													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
+													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
 													autocomplete="name"
 													placeholder={$i18n.t('Enter Your Full Name')}
 													required
@@ -295,13 +295,13 @@
 
 										{#if mode === 'ldap'}
 											<div>
-												<label for="username" class="text-sm font-medium text-purple-200 mb-2 block"
+												<label for="username" class="text-sm font-medium text-orange-200 mb-2 block"
 													>{$i18n.t('Username')}</label
 												>
 												<input
 													bind:value={ldapUsername}
 													type="text"
-													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
+													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
 													autocomplete="username"
 													name="username"
 													id="username"
@@ -311,14 +311,14 @@
 											</div>
 										{:else}
 											<div>
-												<label for="email" class="text-sm font-medium text-purple-200 mb-2 block"
+												<label for="email" class="text-sm font-medium text-orange-200 mb-2 block"
 													>{$i18n.t('Email')}</label
 												>
 												<input
 													bind:value={email}
 													type="email"
 													id="email"
-													class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
+													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
 													autocomplete="email"
 													name="email"
 													placeholder={$i18n.t('Enter Your Email')}
@@ -328,14 +328,14 @@
 										{/if}
 
 										<div>
-											<label for="password" class="text-sm font-medium text-purple-200 mb-2 block"
+											<label for="password" class="text-sm font-medium text-orange-200 mb-2 block"
 												>{$i18n.t('Password')}</label
 											>
 											<input
 												bind:value={password}
 												type="password"
 												id="password"
-												class="w-full px-4 py-3 bg-black/20 border border-purple-500/30 rounded-xl text-white placeholder-purple-300/50 focus:border-purple-400 focus:outline-none transition-all duration-200"
+												class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
 												placeholder={$i18n.t('Enter Your Password')}
 												autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
 												name="password"
@@ -348,14 +348,14 @@
 									{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 										{#if mode === 'ldap'}
 											<button
-												class="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-transparent"
+												class="w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent"
 												type="submit"
 											>
 												{$i18n.t('Authenticate')}
 											</button>
 										{:else}
 											<button
-												class="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-transparent"
+												class="w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent"
 												type="submit"
 											>
 												{mode === 'signin'
@@ -367,14 +367,14 @@
 
 											{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
 												<div class="mt-6 text-sm text-center">
-													<span class="text-purple-200">
+													<span class="text-orange-200">
 														{mode === 'signin'
 															? $i18n.t("Don't have an account?")
 															: $i18n.t('Already have an account?')}
 													</span>
 
 													<button
-														class="ml-2 font-medium text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
+														class="ml-2 font-medium text-orange-400 hover:text-orange-300 underline transition-colors duration-200"
 														type="button"
 														on:click={() => {
 															if (mode === 'signin') {
@@ -396,20 +396,20 @@
 
 							{#if Object.keys($config?.oauth?.providers ?? {}).length > 0}
 								<div class="inline-flex items-center justify-center w-full mt-6">
-									<hr class="w-32 h-px my-4 border-0 bg-purple-500/20" />
+									<hr class="w-32 h-px my-4 border-0 bg-orange-500/20" />
 									{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 										<span
-											class="px-3 text-sm font-medium text-purple-200 bg-transparent"
+											class="px-3 text-sm font-medium text-orange-200 bg-transparent"
 											>{$i18n.t('or')}</span
 										>
 									{/if}
 
-									<hr class="w-32 h-px my-4 border-0 bg-purple-500/20" />
+									<hr class="w-32 h-px my-4 border-0 bg-orange-500/20" />
 								</div>
 								<div class="flex flex-col space-y-3">
 									{#if $config?.oauth?.providers?.google}
 										<button
-											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
+											class="flex justify-center items-center bg-black/20 border border-orange-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/google/login`;
 											}}
@@ -438,7 +438,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.microsoft}
 										<button
-											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
+											class="flex justify-center items-center bg-black/20 border border-orange-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/microsoft/login`;
 											}}
@@ -468,7 +468,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.github}
 										<button
-											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
+											class="flex justify-center items-center bg-black/20 border border-orange-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/github/login`;
 											}}
@@ -488,7 +488,7 @@
 									{/if}
 									{#if $config?.oauth?.providers?.oidc}
 										<button
-											class="flex justify-center items-center bg-black/20 border border-purple-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
+											class="flex justify-center items-center bg-black/20 border border-orange-500/30 hover:border-purple-400/50 text-white hover:bg-black/30 transition-all duration-200 w-full rounded-xl font-medium text-sm py-3"
 											on:click={() => {
 												window.location.href = `${WEBUI_BASE_URL}/oauth/oidc/login`;
 											}}
@@ -521,7 +521,7 @@
 							{#if $config?.features.enable_ldap && $config?.features.enable_login_form}
 								<div class="mt-4">
 									<button
-										class="flex justify-center items-center text-sm w-full text-center text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
+										class="flex justify-center items-center text-sm w-full text-center text-orange-400 hover:text-orange-300 underline transition-colors duration-200"
 										type="button"
 										on:click={() => {
 											if (mode === 'ldap')
@@ -540,7 +540,7 @@
 						</div>
 						{#if $config?.metadata?.login_footer}
 							<div class="max-w-3xl mx-auto">
-								<div class="mt-4 text-xs text-purple-300/70 marked text-center">
+								<div class="mt-4 text-xs text-orange-300/70 marked text-center">
 									{@html DOMPurify.sanitize(marked($config?.metadata?.login_footer))}
 								</div>
 							</div>
