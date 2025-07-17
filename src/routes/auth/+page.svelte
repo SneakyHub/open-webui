@@ -931,7 +931,6 @@
 									</button>
 								</div>
 							{/if}
-						</div>
 						{#if $config?.metadata?.login_footer}
 							<div class="max-w-3xl mx-auto">
 								<div class="mt-4 text-xs text-orange-300/70 marked text-center">
