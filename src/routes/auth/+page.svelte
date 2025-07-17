@@ -237,44 +237,127 @@
 				<div class="min-h-screen">
 					<!-- Hero Section -->
 					<section class="relative min-h-screen flex items-center justify-center px-6">
-						<div class="max-w-6xl mx-auto text-center">
+						<!-- Hero Background Image -->
+						<div class="absolute inset-0 z-0">
+							<img 
+								src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+								alt="Modern developer workspace" 
+								class="w-full h-full object-cover opacity-20"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-orange-900/30"></div>
+						</div>
+						
+						<div class="max-w-6xl mx-auto text-center relative z-10">
 							<div class="mb-8">
-								<h1 class="text-5xl md:text-7xl font-bold mb-6">
-									<span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
-									<span class="text-white ml-2">AI</span>
-								</h1>
-								<p class="text-xl md:text-2xl text-orange-200 mb-6">The Ultimate AI Assistant for Developers</p>
+								<!-- Enhanced Logo/Title with Visual Effects -->
+								<div class="mb-8 relative">
+									<div class="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-3xl blur-3xl"></div>
+									<div class="relative bg-black/30 backdrop-blur-xl border border-orange-500/30 rounded-3xl p-8 shadow-2xl">
+										<div class="flex items-center justify-center mb-4">
+											<div class="relative mr-4">
+												<div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full blur-lg opacity-75"></div>
+												<div class="relative w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+													<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+													</svg>
+												</div>
+											</div>
+											<h1 class="text-5xl md:text-7xl font-bold">
+												<span class="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
+												<span class="text-white ml-2">AI</span>
+											</h1>
+										</div>
+										<p class="text-xl md:text-2xl text-orange-200 mb-4">The Ultimate AI Assistant for Developers</p>
+										<div class="flex items-center justify-center space-x-6 text-sm text-orange-300/80 mb-6">
+											<div class="flex items-center">
+												<span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+												Self-Hosted
+											</div>
+											<div class="flex items-center">
+												<span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+												Privacy-First
+											</div>
+											<div class="flex items-center">
+												<span class="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse"></span>
+												Open Source
+											</div>
+										</div>
+									</div>
+								</div>
+								
 								<p class="text-lg text-orange-100/80 max-w-3xl mx-auto leading-relaxed mb-8">
 									Supercharge your development workflow with an AI assistant that understands code, debugging, configurations, and development best practices. Built by developers, for developers.
 								</p>
-								<div class="flex flex-col sm:flex-row gap-4 justify-center">
+								
+								<!-- Enhanced CTA Buttons -->
+								<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 									<button
-										class="px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+										class="group px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-orange-500/25"
 										on:click={() => showLogin = true}
 									>
-										Start Coding with AI
+										<span class="flex items-center justify-center">
+											🚀 Start Coding with AI
+											<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+											</svg>
+										</span>
 									</button>
 									<button
-										class="px-8 py-4 bg-black/40 border border-orange-500/40 hover:border-orange-400/60 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105"
+										class="px-8 py-4 bg-black/40 border border-orange-500/40 hover:border-orange-400/60 hover:bg-black/60 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 backdrop-blur-sm"
 										on:click={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}
 									>
-										Learn More
+										📖 Learn More
 									</button>
+								</div>
+								
+								<!-- Stats/Trust Indicators -->
+								<div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+									<div class="text-center">
+										<div class="text-2xl font-bold text-orange-400">50+</div>
+										<div class="text-sm text-orange-200/70">Languages</div>
+									</div>
+									<div class="text-center">
+										<div class="text-2xl font-bold text-orange-400">99.9%</div>
+										<div class="text-sm text-orange-200/70">Uptime</div>
+									</div>
+									<div class="text-center">
+										<div class="text-2xl font-bold text-orange-400">⚡</div>
+										<div class="text-sm text-orange-200/70">Lightning Fast</div>
+									</div>
+									<div class="text-center">
+										<div class="text-2xl font-bold text-orange-400">🔒</div>
+										<div class="text-sm text-orange-200/70">Secure</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</section>
 
 					<!-- Features Section -->
-					<section id="features" class="py-20 px-6">
-						<div class="max-w-6xl mx-auto">
+					<section id="features" class="py-20 px-6 relative">
+						<!-- Background Image for Features -->
+						<div class="absolute inset-0 z-0">
+							<img 
+								src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+								alt="Code on multiple screens" 
+								class="w-full h-full object-cover opacity-10"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black/80"></div>
+						</div>
+						
+						<div class="max-w-6xl mx-auto relative z-10">
 							<div class="text-center mb-16">
-								<h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-									Powerful Features for <span class="text-orange-400">Developers</span>
-								</h2>
-								<p class="text-xl text-orange-200 max-w-3xl mx-auto">
-									Everything you need to accelerate your development process, from code generation to debugging and beyond.
-								</p>
+								<div class="relative inline-block mb-6">
+									<div class="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-2xl blur-2xl"></div>
+									<div class="relative bg-black/30 backdrop-blur-xl border border-orange-500/30 rounded-2xl p-6">
+										<h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+											Powerful Features for <span class="text-orange-400">Developers</span>
+										</h2>
+										<p class="text-xl text-orange-200 max-w-3xl mx-auto">
+											Everything you need to accelerate your development process, from code generation to debugging and beyond.
+										</p>
+									</div>
+								</div>
 							</div>
 
 							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -613,29 +696,83 @@
 
 		<!-- Login Modal -->
 		{#if showLogin}
-			<div class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-				<div class="bg-black/90 border border-orange-500/30 rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
-					<div class="flex justify-between items-center mb-6">
-						<h2 class="text-2xl font-bold text-white">Welcome to SneakyHub AI</h2>
-						<button
-							class="text-orange-400 hover:text-orange-300 transition-colors"
-							on:click={() => showLogin = false}
-						>
-							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-							</svg>
-						</button>
-					</div>
+			<div class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+				<!-- Enhanced Modal Design -->
+				<div class="relative max-w-md w-full">
+					<!-- Background decoration -->
+					<div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-3xl blur-2xl"></div>
 					
-					<div class="text-center mb-6">
-						<p class="text-orange-200 mb-4">
-							{#if $config?.onboarding ?? false}
-								🔒 Your data stays secure on your locally hosted server
-							{:else}
-								{mode === 'signin' ? 'Access your developer AI workspace' : 'Create your developer AI workspace'}
-							{/if}
-						</p>
-					</div>
+					<!-- Modal Content -->
+					<div class="relative bg-black/90 backdrop-blur-xl border border-orange-500/30 rounded-3xl shadow-2xl max-h-[90vh] overflow-y-auto">
+						<!-- Modal Header with Hero Image -->
+						<div class="relative">
+							<div class="absolute inset-0">
+								<img 
+									src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80" 
+									alt="AI coding assistant" 
+									class="w-full h-32 object-cover rounded-t-3xl opacity-30"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-t-3xl"></div>
+							</div>
+							
+							<div class="relative p-8 pb-4">
+								<div class="flex justify-between items-start mb-4">
+									<div class="flex items-center">
+										<div class="relative mr-3">
+											<div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full blur-sm opacity-75"></div>
+											<div class="relative w-10 h-10 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+												<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+												</svg>
+											</div>
+										</div>
+										<div>
+											<h2 class="text-2xl font-bold text-white">Welcome to</h2>
+											<div class="flex items-center">
+												<span class="text-lg font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">SneakyHub</span>
+												<span class="text-lg font-bold text-white ml-1">AI</span>
+											</div>
+										</div>
+									</div>
+									<button
+										class="text-orange-400 hover:text-orange-300 transition-colors p-2 hover:bg-orange-500/10 rounded-lg"
+										on:click={() => showLogin = false}
+									>
+										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+									</button>
+								</div>
+								
+								<!-- Trust indicators -->
+								<div class="flex items-center justify-center space-x-4 text-xs text-orange-300/80">
+									<div class="flex items-center">
+										<span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5 animate-pulse"></span>
+										Secure
+									</div>
+									<div class="flex items-center">
+										<span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-1.5 animate-pulse"></span>
+										Private
+									</div>
+									<div class="flex items-center">
+										<span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-1.5 animate-pulse"></span>
+										Fast
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Modal Body -->
+						<div class="p-8 pt-4">
+							<div class="text-center mb-6">
+								<p class="text-orange-200 text-sm">
+									{#if $config?.onboarding ?? false}
+										🔒 Your data stays secure on your locally hosted server
+									{:else}
+										{mode === 'signin' ? '🚀 Access your developer AI workspace' : '✨ Create your developer AI workspace'}
+									{/if}
+								</p>
+							</div>
 
 					{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 						<form
@@ -670,72 +807,96 @@
 									</div>
 
 								{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
-									<div class="flex flex-col mt-4 space-y-4">
+									<div class="flex flex-col mt-4 space-y-6">
 										{#if mode === 'signup'}
-											<div>
-												<label for="name" class="text-sm font-medium text-orange-200 mb-2 block"
-													>{$i18n.t('Name')}</label
-												>
-												<input
-													bind:value={name}
-													type="text"
-													id="name"
-													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
-													autocomplete="name"
-													placeholder={$i18n.t('Enter Your Full Name')}
-													required
-												/>
+											<div class="relative">
+												<label for="name" class="text-sm font-medium text-orange-200 mb-3 block flex items-center">
+													<svg class="w-4 h-4 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+													</svg>
+													{$i18n.t('Name')}
+												</label>
+												<div class="relative">
+													<input
+														bind:value={name}
+														type="text"
+														id="name"
+														class="w-full px-4 py-4 bg-black/40 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:bg-black/60 focus:outline-none transition-all duration-200 backdrop-blur-sm"
+														autocomplete="name"
+														placeholder={$i18n.t('Enter Your Full Name')}
+														required
+													/>
+													<div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/5 to-orange-600/5 pointer-events-none"></div>
+												</div>
 											</div>
 										{/if}
 
 										{#if mode === 'ldap'}
-											<div>
-												<label for="username" class="text-sm font-medium text-orange-200 mb-2 block"
-													>{$i18n.t('Username')}</label
-												>
-												<input
-													bind:value={ldapUsername}
-													type="text"
-													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
-													autocomplete="username"
-													name="username"
-													id="username"
-													placeholder={$i18n.t('Enter Your Username')}
-													required
-												/>
+											<div class="relative">
+												<label for="username" class="text-sm font-medium text-orange-200 mb-3 block flex items-center">
+													<svg class="w-4 h-4 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+													</svg>
+													{$i18n.t('Username')}
+												</label>
+												<div class="relative">
+													<input
+														bind:value={ldapUsername}
+														type="text"
+														class="w-full px-4 py-4 bg-black/40 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:bg-black/60 focus:outline-none transition-all duration-200 backdrop-blur-sm"
+														autocomplete="username"
+														name="username"
+														id="username"
+														placeholder={$i18n.t('Enter Your Username')}
+														required
+													/>
+													<div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/5 to-orange-600/5 pointer-events-none"></div>
+												</div>
 											</div>
 										{:else}
-											<div>
-												<label for="email" class="text-sm font-medium text-orange-200 mb-2 block"
-													>{$i18n.t('Email')}</label
-												>
-												<input
-													bind:value={email}
-													type="email"
-													id="email"
-													class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
-													autocomplete="email"
-													name="email"
-													placeholder={$i18n.t('Enter Your Email')}
-													required
-												/>
+											<div class="relative">
+												<label for="email" class="text-sm font-medium text-orange-200 mb-3 block flex items-center">
+													<svg class="w-4 h-4 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+													</svg>
+													{$i18n.t('Email')}
+												</label>
+												<div class="relative">
+													<input
+														bind:value={email}
+														type="email"
+														id="email"
+														class="w-full px-4 py-4 bg-black/40 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:bg-black/60 focus:outline-none transition-all duration-200 backdrop-blur-sm"
+														autocomplete="email"
+														name="email"
+														placeholder={$i18n.t('Enter Your Email')}
+														required
+													/>
+													<div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/5 to-orange-600/5 pointer-events-none"></div>
+												</div>
 											</div>
 										{/if}
 
-										<div>
-											<label for="password" class="text-sm font-medium text-orange-200 mb-2 block"
-												>{$i18n.t('Password')}</label
-											>
-											<input
-												bind:value={password}
-												type="password"
-												id="password"
-												class="w-full px-4 py-3 bg-black/20 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:outline-none transition-all duration-200"
-												placeholder={$i18n.t('Enter Your Password')}
-												autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
-												name="password"
-												required
-											/>
+										<div class="relative">
+											<label for="password" class="text-sm font-medium text-orange-200 mb-3 block flex items-center">
+												<svg class="w-4 h-4 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+												</svg>
+												{$i18n.t('Password')}
+											</label>
+											<div class="relative">
+												<input
+													bind:value={password}
+													type="password"
+													id="password"
+													class="w-full px-4 py-4 bg-black/40 border border-orange-500/30 rounded-xl text-white placeholder-orange-300/50 focus:border-orange-400 focus:bg-black/60 focus:outline-none transition-all duration-200 backdrop-blur-sm"
+													placeholder={$i18n.t('Enter Your Password')}
+													autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
+													name="password"
+													required
+												/>
+												<div class="absolute inset-0 rounded-xl bg-gradient-to-r from-orange-500/5 to-orange-600/5 pointer-events-none"></div>
+											</div>
 										</div>
 									</div>
 								{/if}
@@ -743,21 +904,32 @@
 									{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 										{#if mode === 'ldap'}
 											<button
-												class="w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent"
+												class="group w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent shadow-lg hover:shadow-orange-500/25"
 												type="submit"
 											>
-												{$i18n.t('Authenticate')}
+												<span class="flex items-center justify-center">
+													🔐 {$i18n.t('Authenticate')}
+													<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+													</svg>
+												</span>
 											</button>
 										{:else}
 											<button
-												class="w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent"
+												class="group w-full py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-transparent shadow-lg hover:shadow-orange-500/25"
 												type="submit"
 											>
-												{mode === 'signin'
-													? $i18n.t('Sign in')
-													: ($config?.onboarding ?? false)
-														? $i18n.t('Create Admin Account')
-														: $i18n.t('Create Account')}
+												<span class="flex items-center justify-center">
+													{mode === 'signin' ? '🚀' : '✨'}
+													{mode === 'signin'
+														? $i18n.t('Sign in')
+														: ($config?.onboarding ?? false)
+															? $i18n.t('Create Admin Account')
+															: $i18n.t('Create Account')}
+													<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+													</svg>
+												</span>
 											</button>
 
 											{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
@@ -939,6 +1111,8 @@
 							</div>
 						{/if}
 					{/if}
+						</div>
+					</div>
 				</div>
 			</div>
 		{/if}
