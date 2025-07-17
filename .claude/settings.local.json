@@ -5,7 +5,10 @@
       "Bash(npm install:*)",
       "Bash(npx svelte-check:*)",
       "Bash(docker cp:*)",
-      "Bash(./rebuild-docker.sh:*)"
+      "Bash(./rebuild-docker.sh:*)",
+      "Bash(npm run check:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }
