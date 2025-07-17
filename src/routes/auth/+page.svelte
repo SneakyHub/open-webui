@@ -787,7 +787,6 @@
 									{/if}
 								</div>
 								</form>
-							</div>
 
 							{#if Object.keys($config?.oauth?.providers ?? {}).length > 0}
 								<div class="inline-flex items-center justify-center w-full mt-6">
